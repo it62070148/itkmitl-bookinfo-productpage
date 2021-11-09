@@ -16,7 +16,7 @@ python productpage.py 9080
 docker build -t productpage .
 
 # Run productpage service on port 8083
-docker run -d --name productpage -p 8083:9080 productpage
+docker run -d --name productpage -p 8083:8083 productpage
 ```
 
 * Test with `/health`
