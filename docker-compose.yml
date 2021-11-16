@@ -6,3 +6,6 @@ services:
       - "8083:8083"
     environment:
       ENABLE_EXTERNAL_BOOK_SERVICE: "true"
+      DETAILS_HOSTNAME: "details"
+      RATINGS_HOSTNAME: "ratings"
+      REVIEWS_HOSTNAME: "reviews"

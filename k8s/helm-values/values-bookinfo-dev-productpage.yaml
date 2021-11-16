@@ -1,0 +1,19 @@
+productpage:
+  namespace: student33-bookinfo-dev
+  image: ghcr.io/it62070148/bookinfo-productpage
+  tag: dev
+  replicas: 1
+  imagePullSecrets: registry-bookinfo
+  port: 8083
+ingress:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+  host: itkmitl.bookinfo.dev.opsta.net
+  path: "/student33/productpage(/|$)(.*)"
+  serviceType: ClusterIP
+extraEnv:
+  ENABLE_EXTERNAL_BOOK_SERVICE: "true"
+  DETAILS_HOSTNAME: "details"
+  RATINGS_HOSTNAME: "ratings"
+  REVIEWS_HOSTNAME: "reviews"
